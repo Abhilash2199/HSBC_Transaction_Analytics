@@ -63,23 +63,22 @@ The dataset passed all quality checks:
 - Donut chart — Account Type Distribution
 - 5 slicers — Account Type, Transaction Type, Quarter, Risk Level, City
 
-### Calculated columns (DAX)
+### Calculated columns and measures (DAX)
 
 ```dax
 Month Name   = FORMAT('HSBC_Transactions_3200'[Date], "MMM YYYY")
+
 Month Number = MONTH('HSBC_Transactions_3200'[Date])
+
 Quarter      = "Q" & TEXT(QUARTER('HSBC_Transactions_3200'[Date]), "0")
 Amount Band  = IF([Amount (INR)] <= 5000, "0–5K",
                IF([Amount (INR)] <= 15000, "5K–15K",
                IF([Amount (INR)] <= 50000, "15K–50K", "50K+")))
-```
-
-### Key DAX measures
-
-```dax
+               
 High Risk %     = DIVIDE(
                     COUNTROWS(FILTER('HSBC_Transactions_3200', 'TransactHSBC_Transactions_3200'[Risk Level] = "High")),
                     COUNTROWS('HSBC_Transactions_3200'))
+```
 
 ### Setup steps
 1. Open Power BI Desktop → **Get Data → Text/CSV** → select `HSBC_Transactions_3200.csv`
