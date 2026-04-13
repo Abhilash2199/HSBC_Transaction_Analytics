@@ -16,6 +16,7 @@ This project generates a realistic banking transaction dataset for exploratory d
 |---|---|
 | `HSBC_Transactions_3200.csv` | Main dataset — 3,200 synthetic transaction records |
 | `HSBC Transaction Analytics Dashboard.pbix` | Standalone preview of the Power BI dashboard layout |
+| `HBSC_Transactions_image.gif` | Overview of Dashboard |
 | `README.md` | This file |
 
 ---
